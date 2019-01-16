@@ -8,6 +8,8 @@ auth.onAuthStateChanged(user => {
             // console.log(snapshot.docs);
             setupGuides(snapshot.docs);
             setupUI(user);
+        }).catch(err => {
+            console.log(err.message);
         });
     } else {
         setupUI();
